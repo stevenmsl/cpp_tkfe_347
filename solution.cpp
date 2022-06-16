@@ -5,7 +5,11 @@ using namespace sol347;
 using namespace std;
 
 /*takeaways
-  - use heap to solve the problem
+  - use max-heap to solve the problem
+    - change the frequency to a negative value
+      so the number with the least frequency will
+      be on the top ready to be removed if
+      needed
   - at any given time, the heap will maintain only
     k numbers
 */
@@ -18,7 +22,7 @@ vector<int> Solution::topKFrequent(vector<int> &nums, int k)
   /* we want the least frequent number on top of the heap
      - we want to maintain there are only k numbers in
        the queue
-     - we want to pop the to whenever the size of the
+     - we want to pop the top whenever the size of the
        queue exceeds k
      - by default q is a max-heap so we need to change
        the frequency to a negative number so the least
