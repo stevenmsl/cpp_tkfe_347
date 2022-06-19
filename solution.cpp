@@ -12,6 +12,10 @@ using namespace std;
       needed
   - at any given time, the heap will maintain only
     k numbers
+  - time complexity: O(nlogn)
+    - each number will get inserted into the queue
+      once
+    - each insert takes logn
 */
 vector<int> Solution::topKFrequent(vector<int> &nums, int k)
 {
@@ -20,8 +24,7 @@ vector<int> Solution::topKFrequent(vector<int> &nums, int k)
     freq[n]++;
 
   /* we want the least frequent number on top of the heap
-     - we want to maintain there are only k numbers in
-       the queue
+     - we want to maintain only k numbers in the queue
      - we want to pop the top whenever the size of the
        queue exceeds k
      - by default q is a max-heap so we need to change
